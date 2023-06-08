@@ -40,6 +40,30 @@ pub fn build(b: *std.Build) void {
     // MRuby !!!!
     addMruby(exe, b);
 
+    // ---------------------------------
+    // Single-header libraries!
+
+    // // stb_connected_component: Finds connected components on 2D grids for testing reachability between two points
+    // exe.addCSourceFile("src/cinclude/stb_connected_components.h", &[_][]const u8{ "-std=c99", "-DSTB_CONNECTED_COMPONENTS_IMPLEMENTATION", "-DSTBCC_GRID_COUNT_X_LOG2=10", "-DSTBCC_GRID_COUNT_Y_LOG2=10" });
+
+    // // stb_perlin: Functions for perlin and fractal noise
+    // exe.addCSourceFile("src/cinclude/stb_perlin.h", &[_][]const u8{ "-std=c99", "-DSTB_PERLIN_IMPLEMENTATION" });
+
+    // // uastar: Finds paths between two points on a 2D grid
+    // exe.addCSourceFile("src/cinclude/uastar.h", &[_][]const u8{ "-std=c99", "-DUASTAR_IMPLEMENTATION" });
+
+    // // stb_image and stb_image_write: Image loader and writers
+    // exe.addCSourceFile("src/cinclude/stb_image.h", &[_][]const u8{ "-std=c99", "-DSTB_IMAGE_IMPLEMENTATION" });
+    // exe.addCSourceFile("src/cinclude/stb_image_write.h", &[_][]const u8{ "-std=c99", "-DSTB_IMAGE_WRITE_IMPLEMENTATION" });
+
+    // // wfc: Single-file Wave Function Collapse library (overlapping method)
+    // exe.addCSourceFile("src/cinclude/wfc.h", &[_][]const u8{ "-std=c99", "-DWFC_USE_STB", "-DWFC_IMPLEMENTATION" });
+
+    // raylib-nuklear - Nuklear for Raylib, use the nuklear immediate-mode graphical user interface in raylib.
+    // exe.addCSourceFile("src/cinclude/raylib-nuklear.h", &[_][]const u8{ "-std=c99", "-DRAYLIB_NUKLEAR_IMPLEMENTATION" });
+
+    //----------------------------------
+
     // This declares intent for the executable to be installed into the
     // standard location when the user invokes the "install" step (the default
     // step when running `zig build`).
